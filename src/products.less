@@ -1,48 +1,47 @@
-// products.less
+// src/products.less
 section {
-    .container {
-      h2 {
-        font-family: @fontStack;
-        font-size: (2 * @fontSizeBase);
-        margin-bottom: @spacing;
-        color: map-get(@colors, primary);
-      }
-      ul.products {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: @spacing;
-        li.product-item {
-          background: map-get(@colors, secondary);
-          padding: @spacing;
+  .container {
+    h2 {
+      font-family: @fontStack;
+      font-size: (2 * @fontSizeBase);
+      margin-bottom: @spacing;
+      color: @primary;
+    }
+    ul.products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: @spacing;
+      li.product-item {
+        background: @secondary;
+        padding: @spacing;
+        border-radius: 4px;
+        text-align: center;
+        img {
+          max-width: 100%;
+          height: auto;
+          margin-bottom: (@spacing / 2);
+        }
+        h4 {
+          font-size: (1.25 * @fontSizeBase);
+          margin: (@spacing / 2) 0;
+        }
+        p {
+          font-size: @fontSizeBase;
+          color: @textLight;
+          margin-bottom: @spacing;
+        }
+        a.product-button {
+          display: inline-block;
+          padding: (@spacing / 2) @spacing;
+          background: @accent;
+          color: #fff;
+          text-decoration: none;
           border-radius: 4px;
-          text-align: center;
-          img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: (@spacing / 2);
-          }
-          h4 {
-            font-size: (1.25 * @fontSizeBase);
-            margin: (@spacing / 2) 0;
-          }
-          p {
-            font-size: @fontSizeBase;
-            color: @textLight;
-            margin-bottom: @spacing;
-          }
-          a.product-button {
-            display: inline-block;
-            padding: (@spacing / 2) @spacing;
-            background: map-get(@colors, accent);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            &:hover {
-              background: lighten(map-get(@colors, accent), 10%);
-            }
+          &:hover {
+            background: lighten(@accent, 10%);
           }
         }
       }
     }
   }
-  
+}
